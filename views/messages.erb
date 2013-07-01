@@ -5,6 +5,12 @@
   </head>
   <body>
     <div>
+        <%@messages.each_with_index  do |message, index|%>
+        <h1>Message<%=index + 1%></h1>
+        Sender:   <%= message.sender%><br>
+        Receiver: <%= message.receiver %><br>
+        Content:  <%= message.content %><br>
+        <%end%>
 
     </div>
     <a href="/reset"><b>DELETE ALL MESSAGES</b></a>

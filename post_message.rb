@@ -2,6 +2,9 @@
 
 require "typhoeus"
 
+
+
+
 puts ""
 print "What is your name? "
 sender = gets.chomp
@@ -13,10 +16,14 @@ receiver = gets.chomp
 print "Your message: "
 message = gets.chomp
 
+
+
 puts ""
 print "Sending message..."
 
+
 uri = "127.0.0.1:9393/" #set to whatever server is running your sinatra
+Typhoeus.post(uri, :body => {:from => sender, :to => receiver, :content => message})
 
 # TODO: Post the message to the server
 
